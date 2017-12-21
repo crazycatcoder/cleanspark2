@@ -1,0 +1,31 @@
+
+<body #body>
+<div>
+<div id="visualization_div" style="width: 900px; height: 500px;" ></div>
+<!-- <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" /> -->
+</div>
+<div>
+  <span class="input-group-btn">
+    <button type="button" routerLink="/home" class="btn btn-default">return home</button>
+  </span>
+</div>
+
+<hr />
+
+<hr />
+
+<div>
+<input type="text" name="daterangeInput" daterangepicker  (selected)="selectedDate($event, daterange)" />
+
+</div>
+</body>
+<!-- width: 900px; -->
+ <!-- [data]="columnChartData" -->
+
+ <!-- <span class="input-group-btn">
+  <a type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></a>
+</span> -->
+
+<!-- (applyDaterangepicker)="calendarEventsHandler($event)" -->
+<!-- [options]="options" -->
+

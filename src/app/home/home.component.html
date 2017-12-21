@@ -1,0 +1,77 @@
+<!-- 
+<h2>Tags</h2>
+
+
+<ul class="tags" >
+  <li class="btn btn-primary" *ngFor="let tag of tags | SearchArray : tagFilter" (click)="onSelect(tag)" >{{tag.tagId}}</li>
+</ul>
+
+
+
+<input type="text" [(ngModel)]="tagFilter" placeholder="Search by Feature"/>
+
+ -->
+
+<!-- (keyup)="search(searchBox.value)" -->
+
+<!-- ; let i = index;
+#searchBox id="search-box" -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Tags</h2>
+  </div>
+
+  <!-- Filter the Products   -->
+  <div class="panel-body">
+      <div class="row">
+          <div class="col-md-2">Filter Tag by Feature:</div>
+          <div class="col-md-6">
+              <input type="text" [(ngModel)]="tagFilter" />
+          </div>
+      </div>
+      <div class="row" *ngIf="tagFilter">
+          <div class="col-md-6">
+              <h3>Filtered by Feature: {{tagFilter}} </h3>
+          </div>
+      </div>
+
+      <div class="has-error" *ngIf="errorMessage">error</div>
+
+      <div class="table-responsive">
+          <table class="table"
+                 >
+              <thead>
+                  <tr>
+                      <th>
+                          
+                      </th>
+                      <th>Observations</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+                                <!-- <tr *ngFor="let tag of tags | SearchArray : tagFilter"> -->
+                    
+                      
+                      <tr  *ngFor="let tag of tags | SearchArray : tagFilter" (click)="onSelect(tag)" ><td>{{tag.tagId}}</td><td>
+                          <a class="btn btn-primary"
+                             [routerLink]="['/home']">
+                              See Graph
+                          </a>
+                      </td>
+                      </tr>
+                    
+                     <!--  <td><a [routerLink]="['/home']">
+                          {{tag.tagId}}
+                          </a>
+                      </td> -->
+                     
+                     
+                 
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+<!-- [routerLink]="['/products', product.id, 'edit']">
+[queryParams]="{filterBy: listFilter, showImage: showImage}" -->
